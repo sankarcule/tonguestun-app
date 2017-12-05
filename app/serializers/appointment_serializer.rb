@@ -4,13 +4,5 @@
 # @attr [string] disease
 
 class AppointmentSerializer < ActiveModel::Serializer
-  attributes :id, :doctor_name, :patient_name, :disease
-
-  def doctor_name
-    Doctor.find(self.doctor_id).name
-  end
-
-  def patient_name
-    Patient.find(self.patient_id).name
-  end
+  attributes :id, :doctor, :patient, :disease
 end
